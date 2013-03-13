@@ -1,0 +1,29 @@
+<h1>Edit Post</h1>
+
+<div class="container">
+
+<form name="edit" action="/post/edit" method="put">
+  Title: <input type="text" name="title" value="<%= @post.title  %>">
+  Price: <input type="number" step="any" name="price" value="<%= @post.price  %>">
+  Description: <textarea name="description"><%= @post.description %></textarea>
+  Category: <select name="category">
+              <% select_cat.each do |category| %>
+                <option value="<%= category.id %>" <% if category.id == @post.category_id %>
+                    <%= selected= "selected"  %>
+                  <% end %> >
+                  <%= category.name %></option>
+              <% end %>
+            </select>
+  Photo URL: <input type="url" name="photo" value="<%= @post.photo_url  %>">
+  <br>
+
+  Contact address <input type="text" name="street" value="<%= @post.street_address %>">
+  Contact city: <input type="text" name="city" value="<%= @post.city  %>">
+  Contact state: <input type="text" name="state" value="<%= @post.state  %>">
+  Contact zip: <input type="number" name="zip" value="<%= @post.zip  %>">
+  Contact email: <input type="email" name="email" value="<%= @post.email  %>">
+
+  <input type="submit" value="Post!">
+</form>
+
+</div>

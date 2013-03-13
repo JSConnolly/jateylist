@@ -1,0 +1,15 @@
+
+<h1>Posts In Category</h1>
+
+<div class="container">
+
+
+<ul>
+  <% if @posts_in_cat %>
+    <% @posts_in_cat.each do |post| %>
+    <li><a href= <%="/post/"+ post.id.to_s %> > <%= post.title %> </a></li>
+    <% end %>
+  <% end %>
+</ul>
+
+</div>

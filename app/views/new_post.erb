@@ -1,0 +1,26 @@
+<h1>New Post</h1>
+
+<div class="container">
+
+<form name="new_post" action="/post/submit" method="post">
+  Title: <input type="text" name="title">
+  Price: <input type="number" step="any" name="price">
+  Description: <textarea name="description"></textarea>
+  Category: <select name="category">
+              <% select_cat.each do |category| %>
+                <option value="<%= category.id %>"><%= category.name %></option>
+              <% end %>
+            </select>
+  Photo URL: <input type="url" name="photo">
+  <br>
+
+  Contact address <input type="text" name="street">
+  Contact city: <input type="text" name="city">
+  Contact state: <input type="text" name="state">
+  Contact zip: <input type="number" name="zip">
+  Contact email: <input type="email" name="email">
+
+  <input type="submit" value="Post!">
+</form>
+
+</div>

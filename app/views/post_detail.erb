@@ -1,0 +1,19 @@
+
+<h1><%= @post.title %></h1>
+<div class="container">
+
+<% if @random %>
+  <div>To edit URL: <a href="/post/edit/<%= @random %>" > <%= '/post/edit/' + @random %></a></div>
+<% end %>
+<img src="<%= @post.photo_url %>"/>
+
+<p><%= @post.price %></p>
+
+<p><%= @post.email %></p>
+
+<p><%= @post.street_address %><br>
+<%= @post.city %>, <%= @post.state %> <%= @post.zip %></p>
+
+<p><%= @post.description %></p>
+
+</div>

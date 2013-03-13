@@ -1,0 +1,15 @@
+
+
+
+<div class="container">
+<h1>All Categories</h1>
+<ul>
+  <% if @categories %>
+    <% @categories.each do |category| %>
+    <li><a href= <%="category/"+ underscore_string(category) %> > <%= category %> </a></li>
+    <% end %>
+  <% end %>
+</ul>
+
+
+</div>
